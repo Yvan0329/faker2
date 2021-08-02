@@ -72,6 +72,11 @@ Date.prototype.Format = function (fmt) { //author: meizz
   await requestAlgo();
   let ckArr = [];
   ckArr.push(cookiesArr[0])
+  ckArr.push(cookiesArr[1])
+  ckArr.push(cookiesArr[2])
+  ckArr.push(cookiesArr[3])
+  ckArr.push(cookiesArr[4])
+  ckArr.push(cookiesArr[5])
   for (let i = 0; i < ckArr.length; i++) {
     if (ckArr[i]) {
       cookie = ckArr[i];
@@ -142,7 +147,6 @@ async function cfd() {
       console.log(`等待时间 ${sleeptime1 / 1000}`);
       await sleep(sleeptime1)
     }
-
     for (let j = 0; j <= 10; j++) {
       console.log(`脚本开始兑换时间 ${(new Date()).Format("yyyy-MM-dd hh:mm:ss | S")}`);
       await cashOutQuali()
