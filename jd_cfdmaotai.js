@@ -136,14 +136,24 @@ async function get_diff_time() {
 
 async function cfd() {
   try {
-    let nowtime = new Date().Format("s")
-    let starttime = 59;
+    // let nowtime = new Date().Format("s")
+    // let starttime = 59;
+    // if(nowtime < 59) {
+    //   let sleeptime1 = (starttime - nowtime) * 1000;
+    //   console.log(`等待时间 ${sleeptime1 / 1000}`);
+    //   await sleep(sleeptime1)
+    // }
+
+    let nowtime = new Date().Format("s.S")
+    let starttime = 60;
     if(nowtime < 59) {
-      let sleeptime1 = (starttime - nowtime) * 1000;
-      console.log(`等待时间 ${sleeptime1 / 1000}`);
-      await sleep(sleeptime1)
+      let sleeptime = (starttime - nowtime) * 1000;
+      console.log(`等待时间 ${sleeptime / 1000}`);
+      await sleep(sleeptime)
     }
-    await sleep(500)
+
+    // await sleep(500)
+
     for (let j = 0; j <= 10; j++) {
       console.log(`脚本开始兑换时间 ${(new Date()).Format("yyyy-MM-dd hh:mm:ss | S")}`);
       await cashOutQuali()
